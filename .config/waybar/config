@@ -2,7 +2,7 @@
     "position": "top",
     "spacing": 16,
     "layer": "top",
-    "modules-left": ["hyprland/workspaces", "pulseaudio", "cava"],
+    "modules-left": ["hyprland/workspaces", "pulseaudio"],
     "modules-center": ["hyprland/window"],
     "modules-right": ["cpu", "battery", "clock"]
     },
@@ -22,7 +22,10 @@
         "format-icons": ["", "", "", "", ""]
     },
     "clock": {
-        "format-alt": "{:%a, %d. %b  %H:%M}"
+        "format": "{:%H:%M:%S %p}",
+        "interval": 1
+        
+
     },
     "pipewire-pulse": {
 
@@ -51,16 +54,8 @@
     },
     "cpu": {
      "interval": 1,
-     "format": "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}",
-     "format-icons": [
-          "<span color='#69ff94'>▁</span>", // green
-          "<span color='#2aa9ff'>▂</span>", // blue
-          "<span color='#f8f8f2'>▃</span>", // white
-          "<span color='#f8f8f2'>▄</span>", // white
-          "<span color='#ffffa5'>▅</span>", // yellow
-          "<span color='#ffffa5'>▆</span>", // yellow
-          "<span color='#ff9977'>▇</span>", // orange
-          "<span color='#dd532e'>█</span>"  // red
-     ]
+     "format": "󰻠",
+     "tooltip": true
+     
     },
 }
