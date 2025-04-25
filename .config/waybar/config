@@ -4,7 +4,7 @@
     "layer": "top",
     "modules-left": ["hyprland/workspaces", "pulseaudio", "custom/cava"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["cpu", "battery", "clock"],
+    "modules-right": ["cpu", "battery", "clock", "custom/lofi"],
 
     "hyprland/workspaces": {
         "format": "{icon}",
@@ -25,7 +25,11 @@
     },
     "pulseaudio": {
         "format": "{volume}% {icon}",
-        "format-icons": ["", "", ""]
+        "format-muted": "",
+        "format-icons": ["", "", ""],
+        "on-click": "pavucontrol",
+        "on-right-click": "muted"
+
     },
     "clock": {
         "format": "{:%H:%M:%S %p}",
@@ -42,7 +46,14 @@
         }
     },
     "custom/cava": {
-        "exec": "~/.config/waybar/scripts/cava.sh"
+        "exec": "~/.config/hypr/scripts/cava.sh"
+    },
+    "custom/lofi": {
+        "format": "{icon}",
+        "format-icons": [
+            "☕️"
+        ],
+        "on-click": "~/.config/hypr/scripts/lofi.sh"
     },
     "cpu": {
         "interval": 1,
