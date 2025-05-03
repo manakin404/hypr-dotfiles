@@ -4,6 +4,8 @@ if status is-interactive
     figlet -f /usr/share/figlet/fonts/The\ Edge.flf lucario
     
 end
+
 abbr --add pac sudo pacman -S
 alias theedge="figlet -f /usr/share/figlet/fonts/The\ Edge.flf"
+alias rm="rm -i"  
 oh-my-posh init fish --config '/home/manakin/.config/oh-my-posh/half-life.omp copy.json' | source
