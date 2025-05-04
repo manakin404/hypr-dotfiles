@@ -46,14 +46,14 @@
         }
     },
     "custom/cava": {
-        "exec": "~/.config/hypr/scripts/cava.sh"
+        "exec": "~/.config/scripts/cava.sh"
     },
     "custom/lofi": {
         "format": "{icon}",
         "format-icons": [
             "☕️"
         ],
-        "on-click": "~/.config/hypr/scripts/lofi.sh"
+        "on-click": "~/.config/scripts/lofi.sh"
     },
     "cpu": {
         "interval": 1,
