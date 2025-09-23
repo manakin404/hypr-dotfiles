@@ -1,14 +1,18 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
-
+    echo "The time is $(date +"%H:%M:%S")"
+    echo "Welcome to $hostname on $HYPRLAND_CMD"
+    catnap
 end
+
 
 if test -f ~/.cache/wal/colors.fish
     source ~/.cache/wal/colors.fish
 end
 
-
+set -U fish_greeting ""
 abbr --add pac sudo pacman -S
+abbr --add fetch fastfetch
 alias theedge="figlet -f /usr/share/figlet/fonts/The\ Edge.flf"
 alias rm="rm -i"
 alias bloodborne="shadPS4/build/shadps4 $HOME/Games/CUSA03173/eboot.bin"
@@ -22,3 +26,4 @@ oh-my-posh init fish --config '/home/manakin/.config/oh-my-posh/half-life.omp co
 
 fish_add_path /home/manakin/.spicetify
 
+starship init fish | source

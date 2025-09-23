@@ -1,0 +1,4 @@
+2025-08-16T21:22:17.199954Z ERROR mpv_websocket: SERVER PANIC: is mpv running with `--input-ipc-server=/tmp/mpv-socket`: Os { code: 111, kind: ConnectionRefused, message: "Connection refused" } at src/mpv.rs:326:27
+
+Backtrace:
+disabled backtrace

@@ -13,13 +13,13 @@ Shell: fish
 
 Status bar: waybar
 
-App launcher: wofi
+App launcher: wofi 
 
 Lockscreen: hyprlock
 
 Screenshot tools: hyprshot (slurp & grim)
 
-Editors: Visual Studio Code, zed, nvim
+Editors: Visual Studio Code
 
 
 

@@ -2,10 +2,10 @@
     "position": "top",
     "spacing": 16,
     "layer": "top",
-    "output": ["eDP-1", "DP-1"],
+    "output": ["*"],
     "modules-left": ["hyprland/workspaces", "network", "pulseaudio"],
     "modules-center": ["clock"],
-    "modules-right": ["tray", "wlr/taskbar", "custom/lofi", "custom/notification", "custom/power"],
+    "modules-right": ["tray", "wlr/taskbar", "custom/notification", "custom/power"],
 
     "hyprland/workspaces": {
         "format": "{icon}",
@@ -111,7 +111,7 @@
     "tooltip": false,
     "format": "{icon}",
     "format-icons": {
-      "notification": " <span foreground='red'><sup></sup></span>",
+      "notification": "   <span foreground='red'><sup>  </sup></span>",
       "none": " ",
       "dnd-notification": "< span foreground='red'><sup></sup></span>",
       "dnd-none": " ",
@@ -129,7 +129,7 @@
   },
   "custom/power": {
     "on-click": "wlogout",
-    "format": "<span color=\"#f38ba8\"> </span>"
+    "format": "<span color=\"#f38ba8\">   </span>"
 
   }
 }
