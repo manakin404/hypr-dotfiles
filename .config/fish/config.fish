@@ -3,6 +3,7 @@ if status is-interactive
     echo "The time is $(date +"%H:%M:%S")"
     echo "Welcome to $hostname on $HYPRLAND_CMD"
     catnap
+    task
 end
 
 
@@ -13,10 +14,9 @@ end
 set -U fish_greeting ""
 abbr --add pac sudo pacman -S
 abbr --add fetch fastfetch
+abbr --add ls eza -la
+abbr -a rm 'trash-put'
 alias theedge="figlet -f /usr/share/figlet/fonts/The\ Edge.flf"
-alias rm="rm -i"
-alias bloodborne="shadPS4/build/shadps4 $HOME/Games/CUSA03173/eboot.bin"
-alias syncwp="~/hypr-dotfiles/.config/scripts/wallpaper-sync.sh"
 alias grubsync="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias updateroblox="flatpak update org.vinegarhq.Sober"
 alias update-initramfs="sudo dracut-rebuild"
