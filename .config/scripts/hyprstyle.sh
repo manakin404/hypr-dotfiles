@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Set wallpaper directory in the WALLPAPER_DIR variable
 WALLPAPER_DIR="$HOME/wallpaper"
 
 # Function to start swww-daemon if not running
@@ -11,9 +12,11 @@ start_swww() {
   fi
 }
 
-# Function to pick a random wallpaper
+# Function to pick a random wallpaper using regex
 pick_random_wallpaper() {
-  find "$WALLPAPER_DIR" -type f \( -iname '*.jpg' -o -iname '*.png' \) | shuf -n 1
+  # Old function
+  # find "$WALLPAPER_DIR" -type f \( -iname '*.jpg' -o -iname '*.png' \) | shuf -n 1
+  find "$WALLPAPER_DIR" -type f -iregex '.*\.\(jpg\|jpeg\|png\|webp\)' | shuf -n 1
 }
 
 # Function to set wallpaper on all monitors

@@ -14,8 +14,3 @@ PACKAGES={
 
 echo "Installing packages.."
 sudo pacman -S --needed --noconfirm "${PACKAGES[@]}"
-
-
-
-
-

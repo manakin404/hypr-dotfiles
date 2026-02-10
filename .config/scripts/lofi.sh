@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#Taken from jakoolit's hyprland dots
+# Taken from jakoolit's hyprland dots
 
 iDIR="$HOME/.config/swaync/icons"
 

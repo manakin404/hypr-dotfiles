@@ -194,4 +194,7 @@ return {
       },
     },
   },
+  opts = {
+    latex = { enabled = true },
+  },
 }
