@@ -2,3 +2,16 @@
 *.tmp
 logs/
 secrets/
+
+# ignore mpv log files
+.config/mpv/logs
+.config/mpv/memo-history.log
+
+# ignore mpd playlists and runtime state
+.config/mpd/playlists
+.config/mpd/database
+.config/mpd/sticker.sql
+
+# ignore stuff inside fcitx5
+.config/fcitx5/conf/*
+

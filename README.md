@@ -1,28 +1,40 @@
-# hypr-dotfiles
+# dotfiles
 Personalized hyprland dotfiles for my workspace.
-I manage my dotfiles with [GNU Stow](https://www.gnu.org/software/stow/)
-
-# Info
-OS: EndeavourOS
-
-WM: Hyprland
-
-Terminal: kitty
-
-Shell: fish
-
-Status bar: waybar
-
-App launcher: wofi/fuzzel
-
-Lockscreen: hyprlock
-
-Screenshot tools: hyprshot (slurp & grim)
-
-Editors: Visual Studio Code & LazyVim
+Managed with [GNU Stow](https://www.gnu.org/software/stow/)
 
 
+## System
 
-# Screenshots
-![Demo1](https://github.com/manakin404/hypr-dotfiles/blob/1939daf6821d5844269fc37d2ef84a2938b62199/screenshots/Demo1.png)
-![Demo2](https://github.com/manakin404/hypr-dotfiles/blob/1939daf6821d5844269fc37d2ef84a2938b62199/screenshots/Demo2.png)
+
+| | |
+|---|---|
+| OS | EndeavourOS |
+| WM | Hyprland |
+| Terminal | kitty |
+| Shell | fish + starship |
+| Bar | waybar |
+| Launcher | fuzzel |
+| Lockscreen | hyprlock |
+| Screenshots | hyprshot |
+| Editor | nvim |
+| Video | mpv |
+| Image | swayimg |
+
+## Setup
+> Proceed at your own risk. Back up anything important before overwriting.
+
+Clone this repository in your home folder and then link configs to `~/.config` 
+
+```bash
+stow -d ~/dotfiles/.config -t ~/.config .
+```
+
+`/home` provides additional configs meant to be stowed to `~`
+```bash
+stow -d ~/dotfiles/home -t ~ .
+```
+
+## Screenshots
+![](screenshots/Demo1.png)
+![](screenshots/Demo2.png)
+![](screenshots/Demo3.png)

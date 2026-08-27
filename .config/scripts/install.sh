@@ -2,15 +2,22 @@
 
 set -e  # exit on failure
 
-PACKAGES={
+PACKAGES=(
     firefox
+    nvim
     git
     hyprland
+    hyprshot
+    hyprlock
+    fuzzel
     waybar
     kitty
     fish
-    swww
-}
+    awww
+    starship
+    mpv
+    swayimg
+)
 
 echo "Installing packages.."
 sudo pacman -S --needed --noconfirm "${PACKAGES[@]}"

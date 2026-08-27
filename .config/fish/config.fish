@@ -5,7 +5,6 @@ if status is-interactive
     fastfetch
 end
 
-
 if test -f ~/.cache/wal/colors.fish
     source ~/.cache/wal/colors.fish
 end
@@ -17,7 +16,7 @@ set -U fish_greeting ""
 abbr -a pac sudo pacman -S
 abbr -a fetch fastfetch
 abbr -a ls eza -la
-abbr -a rm 'trash-put'
+abbr -a rm trash-put
 alias theedge="figlet -f /usr/share/figlet/fonts/The\ Edge.flf"
 alias grubsync="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias update-initramfs="sudo dracut-rebuild"
@@ -31,3 +30,5 @@ oh-my-posh init fish --config '/home/manakin/.config/oh-my-posh/half-life.omp co
 fish_add_path /home/manakin/.spicetify
 
 starship init fish | source
+
+zoxide init fish | source

@@ -3,11 +3,11 @@
 # Set wallpaper directory in the WALLPAPER_DIR variable
 WALLPAPER_DIR="$HOME/wallpaper"
 
-# Function to start swww-daemon if not running
-start_swww() {
-  if ! pgrep -x "swww-daemon" > /dev/null; then
-    echo "Starting swww-daemon..."
-    swww-daemon &
+# Function to start awww-daemon if not running
+start_awww() {
+  if ! pgrep -x "awww-daemon" > /dev/null; then
+    echo "Starting awww-daemon..."
+    awww-daemon &
     sleep 2
   fi
 }
@@ -25,7 +25,7 @@ set_wallpaper_all_monitors() {
   monitors=$(hyprctl monitors -j | jq -r '.[].name')
 
   for mon in $monitors; do
-    swww img "$wallpaper" --outputs "$mon" --transition-type any --transition-duration 1.5
+    awww img "$wallpaper" --outputs "$mon" --transition-type any --transition-duration 1.5
   done
   echo "Wallpaper set on all monitors: $wallpaper"
 }
@@ -39,7 +39,7 @@ apply_theme() {
 }
 
 ### --- Main Execution ---
-start_swww
+start_awww
 wallpaper=$(pick_random_wallpaper)
 
 if [[ -z "$wallpaper" ]]; then

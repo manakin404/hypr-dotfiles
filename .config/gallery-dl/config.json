@@ -1,0 +1,80 @@
+{
+  "extractor": {
+    "base-directory": "/run/media/manakin/SamsungT7/personal/gallery/gallery-dl",
+
+    "#": "set global archive file for all extractors",
+    "archive": "/run/media/manakin/SamsungT7/personal/gallery/gallery-dl/archive.sqlite3",
+    "archive-pragma": ["journal_mode=WAL", "synchronous=NORMAL"],
+
+    "#": "add two custom keywords into the metadata dictionary",
+    "#": "these can be used to further refine your output directories or filenames",
+    "keywords": { "bkey": "", "ckey": "" },
+    "#": "make sure that custom keywords are empty, i.e. they don't appear unless specified by the user",
+    "keywords-default": "",
+
+    "pinterest": {},
+    "reddit": {
+      "#": "This sorts images by author and subreddit",
+      "directory": ["reddit", "{author}", "{subreddit}"],
+      "filename": "{id}_{num}.{extension}",
+      "comments": false,
+      "user": {
+        "directory": ["reddit", "{author}"]
+      }
+    },
+    "pixiv": {
+      "#": "override global archive path for pixiv",
+      "archive": "/run/media/manakin/SamsungT7/personal/gallery/gallery-dl/archive-pixiv.sqlite3",
+
+      "include": ["artworks"],
+
+      "#": "set custom directory and filename format strings for all pixiv downloads",
+      "filename": "{id}_p{num}.{extension}",
+      "directory": ["pixiv", "Works", "{user[id]} {user[account]}"],
+      "refresh-token": "cache",
+
+      "#": "transform ugoira into lossless MKVs",
+      "ugoira": true,
+      "postprocessors": ["ugoira-copy"],
+
+      "#": "use special settings for favorites and bookmarks",
+      "favorite": {
+        "directory": ["pixiv", "Favorites", "{user[id]} {user[account]}"],
+        "refresh-token": "cache"
+      }
+    },
+    "deviantart": {
+      "#1": "download 'gallery' and 'scraps' images for user profile URLs",
+      "include": "gallery,scraps",
+
+      "#2": "use custom API credentials to avoid 429 errors",
+      "client-id": "98765",
+      "client-secret": "0123456789abcdef0123456789abcdef",
+      "refresh-token": "0123456789abcdef0123456789abcdef01234567",
+
+      "#3": "put description texts into a separate directory",
+      "metadata": true,
+      "postprocessors": [
+        {
+          "name": "metadata",
+          "mode": "custom",
+          "directory": "Descriptions",
+          "content-format": "{description}\n",
+          "extension-format": "descr.txt"
+        }
+      ]
+    },
+    "artstation": {
+      "#1": "full account scrapes via profile URLs",
+      "directory": ["{category}", "Artists", "{user[username]}"]
+    },
+    "ytdl": {
+      "#": "enable 'ytdl' extractor",
+      "#": "i.e. invoke ytdl on all otherwise unsupported input URLs",
+      "enabled": true,
+
+      "#": "use yt-dlp instead of youtube-dl",
+      "module": "yt_dlp"
+    }
+  }
+}
